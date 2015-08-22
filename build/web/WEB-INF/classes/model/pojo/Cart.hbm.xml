@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 26, 2014 12:04:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping auto-import="true">
+    <class name="model.pojo.Cart" table="cart" catalog="`ONLINE SHOP`">
+        <id name="cartId" type="int">
+            <column name="CartID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="members" class="model.pojo.Members" fetch="select">
+            <column name="MemberID" />
+        </many-to-one>
+        <many-to-one name="products" class="model.pojo.Products" fetch="select">
+            <column name="ProductID" />
+        </many-to-one>
+        <property name="cartQuantity" type="java.lang.Integer">
+            <column name="CartQuantity" />
+        </property>
+    </class>
+</hibernate-mapping>

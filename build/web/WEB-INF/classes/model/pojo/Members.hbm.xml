@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 26, 2014 12:04:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping auto-import="true">
+    <class name="model.pojo.Members" table="members" catalog="`ONLINE SHOP`">
+        <id name="memberId" type="int">
+            <column name="MemberID" />
+            <generator class="increment" />
+        </id>
+        <property name="userName" type="string">
+            <column name="UserName" length="100" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="100" />
+        </property>
+        <property name="fullName" type="string">
+            <column name="FullName" length="100" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="100" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="100" />
+        </property>
+        <property name="gender" type="string">
+            <column name="Gender" length="8" />
+        </property>
+        <property name="dateOfBirth" type="string">
+            <column name="DateOfBirth" length="12" />
+        </property>
+        <property name="memberType" type="string">
+            <column name="MemberType" length="20" />
+        </property>
+        <set name="carts" table="cart" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="MemberID" />
+            </key>
+            <one-to-many class="model.pojo.Cart" />
+        </set>
+    </class>
+</hibernate-mapping>

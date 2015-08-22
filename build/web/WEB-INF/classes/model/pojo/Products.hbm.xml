@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 26, 2014 12:04:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping auto-import="true">
+    <class name="model.pojo.Products" table="products" catalog="`ONLINE SHOP`">
+        <id name="productId" type="int">
+            <column name="ProductID" />
+            <generator class="increment" />
+        </id>
+        <property name="productName" type="string">
+            <column name="ProductName" length="100" />
+        </property>
+        <property name="productType" type="string">
+            <column name="ProductType" length="100" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" length="100" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="Price" precision="22" scale="0" />
+        </property>
+        <property name="productColor" type="string">
+            <column name="ProductColor" length="50" />
+        </property>
+        <property name="productBrand" type="string">
+            <column name="ProductBrand" length="100" />
+        </property>
+        <property name="productSize" type="string">
+            <column name="ProductSize" length="8" />
+        </property>
+        <property name="allProductsQuantity" type="java.lang.Integer">
+            <column name="AllProductsQuantity" />
+        </property>
+    </class>
+</hibernate-mapping>
